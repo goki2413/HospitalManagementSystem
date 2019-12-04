@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+
+import com.HospitalManagementSystem.Exception.PhysicianNotFoundException;
 import com.HospitalManagementSystem.Service.HospitalManagementSystemService;
 import com.HospitalManagementSystem.model.Physician;
 
@@ -35,10 +37,11 @@ public class HospitalManagementSystemController {
 	public String search(@RequestParam("departmentName") String departmentName,
 			@RequestParam("state") String state,
 			@RequestParam("insurancePlan") String insurancePlan, Model model) {
-		System.out.println(departmentName);
+		
 		List<Physician> physician = this.hospitalManagementSystemService
 				.searchPhysician(departmentName, state, insurancePlan);
-
+		
+	
 		model.addAttribute("physiciandetail", physician);
 		return "PhysicianDetails";
 

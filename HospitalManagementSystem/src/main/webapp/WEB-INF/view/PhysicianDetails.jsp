@@ -7,6 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Display</title>
 <style>
+<style>
+table, td, th {
+  border: 1px solid black;
+  Text-align: center;
+}
+
+table {
+border-collapse: collapse;
+  width: 60%;
+}
+
+th {
+  height: 50px;
+}
+
 h1{
 Text-align: center;
 }
@@ -16,7 +31,7 @@ Text-align: center;
 <a  href="/" >Home</a>
 <h1> Physician Details</h1>
 <table border=1 align="center">
-<tr><th>PhysiciaId</th><th>FirstName</th><th>LastName</th><th>Department</th><th>EducationalQualication</th><th>YOP</th><th>State</th><th>InsurancePlan</th></tr>
+<tr><th>PhysicianId</th><th>FirstName</th><th>LastName</th><th>Department</th><th>EducationalQualication</th><th>YOP</th><th>State</th><th>InsurancePlan</th></tr>
 <c:forEach var="display" items="${physiciandetail}">
 
 <tr>
@@ -31,14 +46,9 @@ Text-align: center;
 <td><c:out value="${display.insurancePlan}" ></c:out></td>
 
 </tr>
+
 </c:forEach>
 </table>
-<%-- Physician Name: ${physiciandetail.firstName}
-${physiciandetail.lastName}<br>
-Department: ${physiciandetail.departmentName}<br>
-Educational Qualification: ${physiciandetail.educationalQualification}<br>
-Y.O.P: ${physiciandetail.yearsOfExperience}<br>
-State: ${physiciandetail.state}<br>
-Insurance Plan: ${physiciandetail.insurancePlan}<br> --%>
+
 </body>
 </html>
